@@ -1,3 +1,5 @@
+%define _empty_manifest_terminate_build 0
+
 Name:           kvazaar
 Version:        2.2.0
 Release:        1
