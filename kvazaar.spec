@@ -1,16 +1,14 @@
 Name:           kvazaar
-Version:        2.1.0
-Release:        1%{?gver}%{dist}
+Version:        2.2.0
+Release:        1
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
-
-Source0:        https://github.com/ultravideo/kvazaar/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/ultravideo/kvazaar/releases/download/v%{version}/kvazaar-%{version}.tar.xz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
-BuildRequires:  gcc, gcc-c++
 
 %description
 Kvazaar is the leading academic open-source HEVC encoder developed from scratch
@@ -32,7 +30,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%autosetup -n %{name}-%{commit0} 
+%autosetup -p1
 autoreconf -vif
 ./configure --prefix='/usr' --libdir=%{_libdir} --disable-static 
 
@@ -46,10 +44,6 @@ find %{buildroot} -name '*.la' -delete
 
 # Pick up docs in the files section
 rm -fr %{buildroot}%{_docdir}
-
-%post libs -p /sbin/ldconfig
-
-%postun libs -p /sbin/ldconfig
 
 %files
 %{_bindir}/*
