@@ -1,5 +1,8 @@
 %define _empty_manifest_terminate_build 0
 
+%define libname %mklibname kvazaar
+%define devname %mklibname -d kvazaar
+
 Name:           kvazaar
 Version:        2.2.0
 Release:        1
@@ -12,22 +15,24 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
 
+Requires:	%{libname} = %{version}-%{release}
+
 %description
 Kvazaar is the leading academic open-source HEVC encoder developed from scratch
 in C. This package contains the application for encoding videos.
 
-%package        libs
+%package -n %{libname}
 Summary:        HEVC encoder %{name} libraries
 
-%description    libs
+%description -n %{libname}
 The %{name}-devel package contains libraries and header files for developing
 applications that use %{name}. This package contains the shared libraries.
 
-%package        devel
+%package -n %{devname}
 Summary:        Development files for %{name}
-Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 
-%description    devel
+%description -n %{devname}
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
@@ -51,13 +56,13 @@ rm -fr %{buildroot}%{_docdir}
 %{_bindir}/*
 %{_mandir}/man1/*
 
-%files libs
+%files -n %{libname}
 %{!?_licensedir:%global license %%doc}
 %license LICENSE
 %doc README.md CREDITS
 %{_libdir}/*.so.*
 
-%files devel
+%files -n %{devname}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
