@@ -5,7 +5,7 @@
 
 Name:           kvazaar
 Version:        2.2.0
-Release:        1
+Release:        2
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
@@ -23,6 +23,7 @@ in C. This package contains the application for encoding videos.
 
 %package -n %{libname}
 Summary:        HEVC encoder %{name} libraries
+Requires:  %{name} = %{version}-%{release}
 
 %description -n %{libname}
 The %{name}-devel package contains libraries and header files for developing
