@@ -4,8 +4,8 @@
 %define devname %mklibname -d kvazaar
 
 Name:           kvazaar
-Version:        2.2.0
-Release:        2
+Version:        2.3.0
+Release:        1
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
