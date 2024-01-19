@@ -10,6 +10,7 @@ Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
 Source0:        https://github.com/ultravideo/kvazaar/releases/download/v%{version}/kvazaar-%{version}.tar.xz
+Patch0:         https://github.com/ultravideo/kvazaar/commit/f6a9d92a30083b5e228ca1126418e12c515bfa69.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
