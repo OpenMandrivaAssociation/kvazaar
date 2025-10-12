@@ -4,7 +4,7 @@
 %define devname %mklibname -d kvazaar
 
 Name:           kvazaar
-Version:        2.3.1
+Version:        2.3.2
 Release:        1
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
