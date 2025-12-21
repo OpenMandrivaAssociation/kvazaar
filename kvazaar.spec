@@ -11,6 +11,8 @@ License:        LGPLv2+
 URL:            https://ultravideo.cs.tut.fi/#encoder
 Source0:        https://github.com/ultravideo/kvazaar/releases/download/v%{version}/kvazaar-%{version}.tar.xz
 
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
